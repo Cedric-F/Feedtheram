@@ -29,6 +29,7 @@ Ont été utilisées les dépendences suivantes:
 * [React Router](https://github.com/ReactTraining/react-router)
 
 Installer les dépendences avec `yarn install`
+
 `yarn start` pour lancer un serveur en `localhost:3000`.
 
 _**Production build**_
