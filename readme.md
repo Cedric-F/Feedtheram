@@ -1,6 +1,6 @@
 _Créé avec [Create React App](https://github.com/facebookincubator/create-react-app)._
 
-# Feed the ram - _Neighborhood Map (React)_
+# Feed the ram
 
 Une appli front pour essayer une API Symfony.
 
