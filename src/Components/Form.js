@@ -10,7 +10,7 @@ class Form extends React.Component {
 		return (
       <div className="form">
   			<form onSubmit={this.props.click}>
-  				<input type="number" min="0" max="100" className="id" onChange={this.props.change} />
+  				<input type="number" min="1" max="100" className="id" onChange={this.props.change} />
   				{this.props.loading ? loader : button}
   			</form>
       </div>

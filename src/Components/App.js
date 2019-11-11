@@ -18,8 +18,8 @@ class App extends React.Component{
     this.state = {
       id: 0,
       loading: false,
-      response: {
-        name: '',
+      reponse: {
+        nom: '',
         age: '',
         avatar: ''
       }
@@ -37,10 +37,11 @@ class App extends React.Component{
       })
       .then(e => {
         setTimeout(() => {
-          this.setState({response: e, loading: false});
-          localStorage.setItem("name", e["name"]);
+          this.setState({reponse: e, loading: false});
+          console.log(e);
+          localStorage.setItem("nom", e["nom"]);
           localStorage.setItem("age", e["age"]);
-          localStorage.setItem("avatar", `https://robohash.org/${e["name"]}`);
+          localStorage.setItem("avatar", `https://robohash.org/${e["nom"]}`);
           document.querySelector('#id').click();
         }, 1500);
       });
@@ -51,7 +52,7 @@ class App extends React.Component{
   }
 
   render() {
-    const response = this.state.response;
+    const reponse = this.state.reponse;
     return (
       <Router>
         <div className="App">
@@ -61,10 +62,10 @@ class App extends React.Component{
             change={this.setId.bind(this)}
             click={this.handle.bind(this)}
             loading={this.state.loading} />} />
-          <Route exact path="/" render={(location) => <Link id="id" to={{ pathname: `${process.env.PUBLIC_URL}/${response.name}/`, state: {character: response} }}/>} />
+          <Route exact path="/" render={(location) => <Link id="id" to={{ pathname: `${process.env.PUBLIC_URL}/${reponse.nom}/`, state: {character: reponse} }}/>} />
 
           <Route exact path="/:Character/" render={() => <Character
-            stats={this.state.response} />} />
+            stats={this.state.reponse} />} />
         </div>
       </Router>
     );
