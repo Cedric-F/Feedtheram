@@ -1,0 +1,104 @@
+.App {
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 75px auto 0;
+  text-shadow: 2px 2px black;
+}
+
+.form, .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  text-align: center;
+  box-shadow: 0 3px 3px black;
+}
+
+a, a:hover, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.form form {
+  width: 320px;
+  text-align: center;
+}
+
+.id {
+  height: 30px;
+}
+
+button {
+  display: block;
+  height: 48px;
+  margin: 10px auto 0;
+}
+
+.load {
+  margin: 10px auto 0;
+  width: 15px;
+  height: 15px;
+  border: 5px solid #0004;
+  border-radius: 50%;
+  border-left-color: white;
+  animation: load 0.5s linear infinite;
+}
+
+.character {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  margin: 25px 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0 7px black;
+  background: #0004;
+  width: 75%;
+  height: auto;
+  align-self: center;
+}
+
+.card ul {
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  align-self: center;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 900px){
+  .card-body {
+    width: 300px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .card img {
+    width: 125px;
+  }
+}
