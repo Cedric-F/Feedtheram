@@ -28,8 +28,8 @@ Ont été utilisées les dépendences suivantes:
 * [React Bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 * [React Router](https://github.com/ReactTraining/react-router)
 
-* `yarn install` to install the dependencies.
-* `yarn start` to start a server and test the development build on `localhost:3000`.
+Installer les dépendences avec `yarn install`
+`yarn start` pour lancer un serveur en `localhost:3000`.
 
 _**Production build**_
 
