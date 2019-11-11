@@ -1,3 +1,12 @@
+/**
+ * App.css
+ * Auteur: Cedric-F
+ * Date: 11/11/19;
+ */
+
+
+/* ---- General Layout ---- */
+
 .App {
   font-size: calc(10px + 2vmin);
   color: white;
@@ -13,6 +22,8 @@
   align-items: center;
 }
 
+/* ---- Style du "header" ---- */
+
 .head {
   text-align: center;
   box-shadow: 0 3px 3px black;
@@ -23,20 +34,26 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
+/* ---- Formulaire ---- */
+
 .form form {
   width: 320px;
   text-align: center;
 }
 
 .id {
-  height: 30px;
+  height: 20px;
+  width: 175px;
 }
 
 button {
   display: block;
-  height: 48px;
-  margin: 10px auto 0;
+  height: 30px;
+  width: 100px;
+  margin: 20px auto 0;
 }
+
+/* ---- Loader ---- */
 
 .load {
   margin: 10px auto 0;
@@ -47,6 +64,8 @@ button {
   border-left-color: white;
   animation: load 0.5s linear infinite;
 }
+
+/* ---- Carte du personnage ---- */
 
 .character {
   display: flex;
@@ -82,6 +101,8 @@ button {
   align-self: center;
 }
 
+/* ---- Animation du loader ---- */
+
 @keyframes load {
   0% {
     transform: rotate(0deg);
@@ -91,7 +112,14 @@ button {
   }
 }
 
+/* ---- Quelques ajustement pour les écrans en orientation "paysage" ---- */
+
 @media screen and (orientation: landscape) and (max-width: 900px){
+  
+  button {
+    height: 48px;
+  }
+
   .card-body {
     width: 300px;
     flex-direction: row;
