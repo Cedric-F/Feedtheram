@@ -20,15 +20,15 @@ git clone https://github.com/Cedric-F/Feedtheram.git
 git clone --single-branch -b master https://github.com/Cedric-F/Feedtheram.git
 ```
 
-_**Dependences**_
+_**Dependances**_
 
-Ont été utilisées les dépendences suivantes:
+Ont été utilisées les dépendances suivantes:
 
 * [React](https://github.com/facebook/React)
 * [React Bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 * [React Router](https://github.com/ReactTraining/react-router)
 
-Installer les dépendences avec `yarn install`
+Installer les dépendances avec `yarn install`
 
 `yarn start` pour lancer un serveur en `localhost:3000`.
 
