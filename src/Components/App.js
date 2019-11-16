@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-          BrowserRouter as Router,
-          Route,
-          Link
-        } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import '../utils/App.css';
 
@@ -33,26 +29,32 @@ class App extends React.Component{
   /**
    * Récupère l'id saisi par le joueur et gère l'envoie de la requête à l'API.
    * Le résultat est stocké en local pour garder une trace de la dernière fiche de personnage reçue.
-   * @param e est l'event correspondant à l'envoie du formulaire
+   * @param submit est l'event correspondant à l'envoie du formulaire
    */
 
-  handle(e) {
-    e.preventDefault(); // empêche le rechargement de la page lors de l'envoie du formulaire
+  handle(submit) {
+    submit.preventDefault(); // empêche le rechargement de la page lors de l'envoie du formulaire
 
     const id = this.state.id;
-    id >= 0 && id && // "short circuit" evaluation. Lorsque l'id existe et est supérieure ou égale à 0, on effectue la requête
+    id >= 0 && id &&
     
+    // requiert l'ajout de l'adresse dans le fichier host du dev
+    // 127.0.0.1  api.feedtheram.com:8000
+
     fetch(`http://api.feedtheram.com:8000/Character/${id}`)
-      .then(e => {
+      .then(response => {
         this.setState({loading: true});
-        return e.json();
+        return response.json();
       })
-      .then(e => {
-        setTimeout(() => { // Un petit timeout pour admirer le changement d'état du bouton du formulaire
-          this.setState({reponse: e, loading: false});
-          localStorage.setItem("nom", e["nom"]);
-          localStorage.setItem("age", e["age"]);
-          localStorage.setItem("avatar", `https://robohash.org/${e["nom"]}`);
+      .then(response => {
+        setTimeout(() => {
+          
+          this.setState({reponse: response, loading: false});
+
+          localStorage.setItem("nom", response["nom"]);
+          localStorage.setItem("age", response["age"]);
+          localStorage.setItem("avatar", `https://robohash.org/${response["nom"]}`);
+
           document.querySelector('#id').click();
         }, 1500);
       });
@@ -60,11 +62,11 @@ class App extends React.Component{
 
   /**
    * Met à jour l'id dans le state à mesure que la valeur du champ de saisie est modifiée par l'utilisateur
-   * @e est le champ de saisie
+   * @input est le champ de saisie
    */
 
-  setId(e) {
-    this.setState({id: e.target.value});
+  setId(input) {
+    this.setState({id: input.target.value});
   }
 
   /**
@@ -86,7 +88,7 @@ class App extends React.Component{
         {/* Crée une route custom pour le personnage reçu */}
 
           <Route exact path="/:Character/" render={() => <Character
-            stats={this.state.reponse} />} /> {/* :Character est un placeholder pour le nom du personnage */}
+            stats={reponse} />} /> {/* :Character est un placeholder pour le nom du personnage */}
         </div>
       </Router>
     );
