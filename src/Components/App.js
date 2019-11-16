@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { HashRouter as Router, Route, Link} from "react-router-dom";
 
 import '../utils/App.css';
 
@@ -78,16 +78,16 @@ class App extends React.Component{
     return (
       <Router>
         <div className="App">
-          <Route path="/" component={Nav} />
+          <Route path={`${process.env.PUBLIC_URL}/`} component={Nav} />
 
-          <Route exact path="/" render={() => <Form
+          <Route exact path={`${process.env.PUBLIC_URL}/`} render={() => <Form
             change={this.setId.bind(this)} // On fait un bind du contexte. Lorsque la méthode "setId()" sera executée dans le Form, le contexte (this) sera celui de App.
             click={this.handle.bind(this)} // Ainsi, c'est dans le parent que sera modifié le state.
             loading={this.state.loading} />} />
-          <Route exact path="/" render={(location) => <Link id="id" to={{ pathname: `${process.env.PUBLIC_URL}/${reponse.nom}/`, state: {character: reponse} }}/>} />
+          <Route exact path={`${process.env.PUBLIC_URL}/`} render={(location) => <Link id="id" to={{ pathname: `${process.env.PUBLIC_URL}/${reponse.nom}/`, state: {character: reponse} }}/>} />
         {/* Crée une route custom pour le personnage reçu */}
 
-          <Route exact path="/:Character/" render={() => <Character
+          <Route exact path={`${process.env.PUBLIC_URL}/:Character/`} render={() => <Character
             stats={reponse} />} /> {/* :Character est un placeholder pour le nom du personnage */}
         </div>
       </Router>
