@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Feedtheram/static/css/main.e10c9b66.chunk.css",
+    "main.js": "/Feedtheram/static/js/main.f73dd3ea.chunk.js",
+    "main.js.map": "/Feedtheram/static/js/main.f73dd3ea.chunk.js.map",
+    "runtime-main.js": "/Feedtheram/static/js/runtime-main.b57e979c.js",
+    "runtime-main.js.map": "/Feedtheram/static/js/runtime-main.b57e979c.js.map",
+    "static/js/2.8dfa1cb7.chunk.js": "/Feedtheram/static/js/2.8dfa1cb7.chunk.js",
+    "static/js/2.8dfa1cb7.chunk.js.map": "/Feedtheram/static/js/2.8dfa1cb7.chunk.js.map",
+    "index.html": "/Feedtheram/index.html",
+    "precache-manifest.3a07dfc20e4cbf411a5c7645d6ba16b7.js": "/Feedtheram/precache-manifest.3a07dfc20e4cbf411a5c7645d6ba16b7.js",
+    "service-worker.js": "/Feedtheram/service-worker.js",
+    "static/css/main.e10c9b66.chunk.css.map": "/Feedtheram/static/css/main.e10c9b66.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b57e979c.js",
+    "static/js/2.8dfa1cb7.chunk.js",
+    "static/css/main.e10c9b66.chunk.css",
+    "static/js/main.f73dd3ea.chunk.js"
+  ]
+}
