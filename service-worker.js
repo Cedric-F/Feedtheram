@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Feedtheram/precache-manifest.f30f161003111334ae22a04900c4d726.js"
+  "/Feedtheram/precache-manifest.d3345e7ee844be0f9a0cb272ca368038.js"
 );
 
 self.addEventListener('message', (event) => {
